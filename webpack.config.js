@@ -8,9 +8,10 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
         // // 关闭webpack箭头函数
-        // environment: {
-        //     arrowFunction: false
-        // }
+        environment: {
+            arrowFunction: false,
+            const: false
+        }
     },
     module: {
         rules:[
@@ -52,5 +53,8 @@ module.exports = {
         alias: {
             '@': '/src/'
         }
+    },
+    devServer: {
+        watchFiles: ['./index.html']
     }
 }
